@@ -1,0 +1,40 @@
+#include <iostream>
+#include <iomanip> 
+
+using namespace std;
+
+int main() {
+    int numCourses;
+    double grade, creditHours;
+    double totalGradePoints = 0.0;
+    double totalCredits = 0.0;
+    cout << "''''''''''''CGPA Calculator ''''''''''''" << endl;
+    //Getting no.of courses
+    cout << "Enter the number of courses: ";
+    cin >> numCourses;
+
+    for (int i = 1; i <= numCourses; i++) {
+        cout << "\nCourse " << i << ":" << endl;
+        
+        cout << "Enter grade of "<<i<<" course(1-4) : " ; //input the grade
+        cin >> grade;
+
+        cout << "Enter credit hours: ";//input the credit hours
+        cin >> creditHours;
+        //credit points calculation
+        totalGradePoints += (grade * creditHours);
+        totalCredits += creditHours;
+    }
+
+    //final CGPA calculation
+    double cgpa = totalGradePoints / totalCredits;
+
+    // Display final result 
+    cout << fixed << setprecision(2);
+    cout<<"\n";
+    cout << "===== Final Result =====" << endl;
+    cout << "Total Grade Points: " << totalGradePoints << endl;
+    cout << "Final CGPA: " << cgpa << endl;
+    cout<<".....Thank you.......";
+    return 0;
+}
